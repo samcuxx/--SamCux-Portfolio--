@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.wave-emoji {
+  animation: wave 2.5s infinite;
+  transform-origin: 70% 70%;
+}
+
+.cursor-dot,
+.cursor-border {
+  pointer-events: none;
+  position: fixed;
+  border-radius: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ffe400;
+}
+
+.cursor-border {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 228, 0, 0.5);
+  transition: all 0.08s ease-out;
+}
+
+.cursor-border.active {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 228, 0, 0.1);
+}
+
+body {
+  cursor: none;
+}
+
+a,
+button {
+  cursor: none;
+}
+
+
+@media (max-width: 767px) {
+  body {
+    cursor: auto;
+  }
+
+  a,
+  button {
+    cursor: pointer;
+  }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.1); /* sa-dark-bg with opacity */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.5); /* sa-dark-primary with opacity */
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(14, 165, 234, 0.7); /* sa-blue with opacity */
+  background-clip: content-box;
+}
+
+/* Firefox scrollbar styles */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 215, 0, 0.5) rgba(15, 23, 42, 0.1); /* sa-dark-primary and sa-dark-bg with opacity */
+}
+
+/* Light mode scrollbar */
+@media (prefers-color-scheme: light) {
+  ::-webkit-scrollbar-track {
+    background: rgba(248, 248, 248, 0.1); /* sa-light-bg with opacity */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 215, 0, 0.5); /* sa-light-primary with opacity */
+  }
+  
+  * {
+    scrollbar-color: rgba(255, 215, 0, 0.5) rgba(248, 248, 248, 0.1); /* sa-light-primary and sa-light-bg with opacity */
+  }
+}
+
