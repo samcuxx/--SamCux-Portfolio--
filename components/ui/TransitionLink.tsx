@@ -24,10 +24,10 @@ export default function TransitionLink({
     startTransition();
 
     // Wait for the animation to complete before navigation
-    // Animation duration (1s) + second layer delay (0.1s) + small buffer (0.2s)
+    // Animation duration (1.2s) + second layer delay (0.1s)
     setTimeout(() => {
       router.push(href);
-    }, 800); // Adjusted to 800ms to start navigation slightly before animation ends
+    }, 800);
   };
 
   return (

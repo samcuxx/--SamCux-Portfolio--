@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import Navbar from "@/componen/ts/global/Navbar";
+import Navbar from "@/components/global/Navbar";
 import { ThemeProvider } from "@/components/global/Provider";
 import { Inter } from "next/font/google";
 import CursorEffect from "@/components/ui/CursorEffect";
